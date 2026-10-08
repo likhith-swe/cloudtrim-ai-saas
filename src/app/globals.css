@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-ink: #060a08;
+  --color-panel: #0b120e;
+  --color-raise: #0f1712;
+  --color-edge: #1c2b22;
+  --color-edge2: #2c4434;
+  --color-fog: #7e948a;
+  --color-mist: #b9c9bf;
+  --color-snow: #eaf2ec;
+  --color-mint: #3ddc84;
+  --color-lime: #b7ee4f;
+  --color-ember: #ff6b5e;
+  --color-gold: #f2c14e;
+  --color-aqua: #5fd4cf;
+  --color-skyx: #7cc4ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(1100px 520px at 85% -5%, rgba(61, 220, 132, 0.09), transparent 62%),
+    radial-gradient(900px 480px at -10% 25%, rgba(95, 212, 207, 0.05), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* faint CRT scanlines over everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 70;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(234, 242, 236, 0.025) 0px,
+    rgba(234, 242, 236, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background: rgba(61, 220, 132, 0.35);
+  color: #eaf2ec;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2c4434 #0b120e;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2b22;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b120e;
+}
+
+/* ── glow utilities ─────────────────────────────────────────────────── */
+.glow-mint {
+  text-shadow: 0 0 22px rgba(61, 220, 132, 0.5);
+}
+.glow-ember {
+  text-shadow: 0 0 22px rgba(255, 107, 94, 0.45);
+}
+.panel-glow:hover {
+  box-shadow: 0 0 0 1px rgba(61, 220, 132, 0.18), 0 8px 40px rgba(61, 220, 132, 0.06);
+}
+
+/* ── waste ticker marquee ───────────────────────────────────────────── */
+@keyframes ct-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: ct-marquee 48s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ── radar sweep ────────────────────────────────────────────────────── */
+@keyframes ct-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.radar-sweep {
+  animation: ct-sweep 4.2s linear infinite;
+}
+
+@keyframes ct-blip {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+.blip {
+  animation: ct-blip 2.4s ease-in-out infinite;
+}
+
+@keyframes ct-pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(61, 220, 132, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(61, 220, 132, 0);
+  }
+}
+.pulse-dot {
+  animation: ct-pulse-dot 1.8s ease-out infinite;
+}
+
+/* ── savings counter tick flash ─────────────────────────────────────── */
+@keyframes ct-tick {
+  0% {
+    color: #b7ee4f;
+    text-shadow: 0 0 28px rgba(183, 238, 79, 0.65);
+  }
+  100% {
+    color: #ff6b5e;
+    text-shadow: 0 0 18px rgba(255, 107, 94, 0.35);
+  }
+}
+.tick-flash {
+  animation: ct-tick 0.9s ease-out;
+}
+
+/* ── code blocks ────────────────────────────────────────────────────── */
+.codebox {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.65;
+  background: #080d0a;
+  border: 1px solid #1c2b22;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+.codebox .tf-comment {
+  color: #5d7268;
+}
+
+/* ── form controls ──────────────────────────────────────────────────── */
+input[type="range"] {
+  accent-color: #3ddc84;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  color-scheme: dark;
+}
+
+/* ── modal entrance ─────────────────────────────────────────────────── */
+@keyframes ct-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.modal-in {
+  animation: ct-modal-in 0.18s ease-out;
+}

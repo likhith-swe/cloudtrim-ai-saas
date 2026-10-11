@@ -7,6 +7,7 @@ import LeakGrid from "./LeakGrid";
 import RevenueModel from "./RevenueModel";
 import WasteTicker from "./WasteTicker";
 import { useModals } from "./GlobalModals";
+import FluidExpandingGrid from "@/components/ui/fluid-expanding-grid";
 
 function filterLeaks(leaks: CloudLeak[], f: HeroFilters): CloudLeak[] {
   let out = leaks;
@@ -77,6 +78,29 @@ export default function RadarHome({
       />
 
       <WasteTicker leaks={leaks} />
+
+      {/* Bento Grid Architecture Section (21st.dev) */}
+      <section id="bento-architecture" className="border-t border-b border-edge/60 bg-panel/30 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint">
+                bento grid architecture // 21st.dev
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-snow">
+                Fluid Expanding Cloud Cluster
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fog">
+                Interactive fluid bento gallery. Click any region card below to expand the active inspection zone with spring physics.
+              </p>
+            </div>
+            <div className="font-mono text-[10px] uppercase tracking-wider text-fog">
+              3 active bento zones · spring physics
+            </div>
+          </div>
+          <FluidExpandingGrid />
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">

@@ -18,6 +18,16 @@
   --color-gold: #f2c14e;
   --color-aqua: #5fd4cf;
   --color-skyx: #7cc4ff;
+
+  --color-background: #060a08;
+  --color-foreground: #eaf2ec;
+  --color-card: #0b120e;
+  --color-card-foreground: #eaf2ec;
+  --color-muted: #101a14;
+  --color-muted-foreground: #7e948a;
+  --color-border: #1c2b22;
+  --color-primary: #3ddc84;
+  --color-primary-foreground: #060a08;
 }
 
 html {

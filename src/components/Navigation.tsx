@@ -70,6 +70,9 @@ export default function Navigation() {
           <Link href="/" className="transition hover:text-mint">
             Radar
           </Link>
+          <Link href="/#bento-architecture" className="text-mint font-semibold transition hover:text-snow">
+            ✨ Bento Grid
+          </Link>
           <Link href="/#pricing" className="transition hover:text-mint">
             Pricing
           </Link>

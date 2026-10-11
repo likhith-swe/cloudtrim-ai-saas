@@ -8,6 +8,7 @@ import RevenueModel from "./RevenueModel";
 import WasteTicker from "./WasteTicker";
 import { useModals } from "./GlobalModals";
 import FluidExpandingGrid from "@/components/ui/fluid-expanding-grid";
+import EtherealBeamsHero from "@/components/ui/ethereal-beams-hero";
 
 function filterLeaks(leaks: CloudLeak[], f: HeroFilters): CloudLeak[] {
   let out = leaks;
@@ -69,13 +70,40 @@ export default function RadarHome({
 
   return (
     <>
-      <Hero
-        stats={stats}
-        filters={filters}
-        onChange={(patch) => setFilters((f) => ({ ...f, ...patch }))}
-        services={services}
-        matched={filtered.length}
+      {/* 3D Ethereal Beams Hero (Three.js WebGL procedural GLSL shaders) */}
+      <EtherealBeamsHero
+        showNavbar={false}
+        lightColor="#3ddc84"
+        brandName="CloudTrim AI"
+        badgeText="FINOPS CLOUD RADAR // 3D LIGHT BEAMS CORE"
+        headlinePart1="Detect"
+        headlineGradient="25–40% Cloud Waste"
+        headlinePart2="feeding zombies."
+        subtitle="Idle compute, unattached EBS volumes, NAT gateways routing zero traffic. Scored 0–100, priced per hour, with 1-click Terraform fixes."
+        primaryCtaText="Launch FinOps Audit"
+        secondaryCtaText="Inspect Bento Radar ↓"
+        stats={[
+          { value: "$8,778/mo", label: "Fleet Waste Identified" },
+          { value: `${stats.leakCount} Signatures`, label: "Verified Leaks" },
+          { value: "24/7", label: "Real-time Tripwires" },
+        ]}
+        onPrimaryCtaClick={() => open("pricing")}
+        onSecondaryCtaClick={() => {
+          const el = document.getElementById("bento-radar-console");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }}
       />
+
+      {/* Bento Radar & Sweep Console (with Magnified Bento) */}
+      <div id="bento-radar-console">
+        <Hero
+          stats={stats}
+          filters={filters}
+          onChange={(patch) => setFilters((f) => ({ ...f, ...patch }))}
+          services={services}
+          matched={filtered.length}
+        />
+      </div>
 
       <WasteTicker leaks={leaks} />
 

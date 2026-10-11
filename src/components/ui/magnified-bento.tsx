@@ -71,11 +71,11 @@ export const MagnifiedBento: React.FC<MagnifiedBentoProps> = ({
 
   return (
     <div className={cn("flex items-center justify-center p-2 sm:p-4 w-full not-prose", className)}>
-      <div className="group relative w-full max-w-[440px] overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-edge bg-panel/90 p-1.5 sm:p-2 shadow-2xl shadow-mint/5 transition-all duration-500 hover:shadow-mint/10 hover:border-mint/30 hover:-translate-y-1">
+      <div className="group relative w-full max-w-[440px] overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 bg-[#0a0e17]/80 backdrop-blur-xl p-1.5 sm:p-2 shadow-2xl transition-all duration-500 hover:border-white/25 hover:-translate-y-1">
         <div
           ref={containerRef}
           className={cn(
-            "relative w-full overflow-hidden rounded-[1.6rem] sm:rounded-[2rem] bg-ink/70 border border-edge2/50",
+            "relative w-full overflow-hidden rounded-[1.6rem] sm:rounded-[2rem] bg-[#060910] border border-white/10",
             DEFAULT_CONFIG.containerHeight
           )}
         >
@@ -178,11 +178,11 @@ export const MagnifiedBento: React.FC<MagnifiedBentoProps> = ({
         <div className="p-4 sm:p-5 px-3 pb-4 sm:pb-5">
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-mint animate-ping" />
-            <h3 className="text-lg font-bold tracking-tight text-snow">
+            <h3 className="text-lg font-bold tracking-tight text-white">
               {title}
             </h3>
           </div>
-          <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-fog font-sans">
+          <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400 font-sans">
             {description}
           </p>
         </div>

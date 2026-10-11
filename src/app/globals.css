@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --color-ink: #060a08;
-  --color-panel: #0b120e;
-  --color-raise: #0f1712;
-  --color-edge: #1c2b22;
-  --color-edge2: #2c4434;
-  --color-fog: #7e948a;
-  --color-mist: #b9c9bf;
-  --color-snow: #eaf2ec;
+  --color-ink: #07090e;
+  --color-panel: rgba(13, 17, 23, 0.85);
+  --color-raise: #0f172a;
+  --color-edge: rgba(255, 255, 255, 0.08);
+  --color-edge2: rgba(255, 255, 255, 0.16);
+  --color-fog: #94a3b8;
+  --color-mist: #e2e8f0;
+  --color-snow: #ffffff;
   --color-mint: #3ddc84;
   --color-lime: #b7ee4f;
   --color-ember: #ff6b5e;
@@ -19,15 +20,15 @@
   --color-aqua: #5fd4cf;
   --color-skyx: #7cc4ff;
 
-  --color-background: #060a08;
-  --color-foreground: #eaf2ec;
-  --color-card: #0b120e;
-  --color-card-foreground: #eaf2ec;
-  --color-muted: #101a14;
-  --color-muted-foreground: #7e948a;
-  --color-border: #1c2b22;
+  --color-background: #07090e;
+  --color-foreground: #ffffff;
+  --color-card: rgba(13, 17, 23, 0.85);
+  --color-card-foreground: #ffffff;
+  --color-muted: #111827;
+  --color-muted-foreground: #94a3b8;
+  --color-border: rgba(255, 255, 255, 0.08);
   --color-primary: #3ddc84;
-  --color-primary-foreground: #060a08;
+  --color-primary-foreground: #07090e;
 }
 
 html {
@@ -37,26 +38,10 @@ html {
 body {
   background-color: var(--color-ink);
   background-image:
-    radial-gradient(1100px 520px at 85% -5%, rgba(61, 220, 132, 0.09), transparent 62%),
-    radial-gradient(900px 480px at -10% 25%, rgba(95, 212, 207, 0.05), transparent 55%);
+    radial-gradient(1100px 520px at 85% -5%, rgba(61, 220, 132, 0.06), transparent 62%),
+    radial-gradient(900px 480px at -10% 25%, rgba(56, 189, 248, 0.04), transparent 55%);
   background-attachment: fixed;
-}
-
-/* faint CRT scanlines over everything */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 70;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(234, 242, 236, 0.025) 0px,
-    rgba(234, 242, 236, 0.025) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  mix-blend-mode: overlay;
+  font-family: var(--font-sans);
 }
 
 ::selection {

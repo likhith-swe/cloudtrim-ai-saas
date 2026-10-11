@@ -108,21 +108,21 @@ export default function RadarHome({
       <WasteTicker leaks={leaks} />
 
       {/* Bento Grid Architecture Section (21st.dev) */}
-      <section id="bento-architecture" className="border-t border-b border-edge/60 bg-panel/30 py-16">
+      <section id="bento-architecture" className="border-t border-b border-white/10 bg-white/[0.02] py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint">
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint font-semibold">
                 bento grid architecture // 21st.dev
               </p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-snow">
+              <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white">
                 Fluid Expanding Cloud Cluster
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fog">
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-zinc-400">
                 Interactive fluid bento gallery. Click any region card below to expand the active inspection zone with spring physics.
               </p>
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-wider text-fog">
+            <div className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">
               3 active bento zones · spring physics
             </div>
           </div>
@@ -133,16 +133,16 @@ export default function RadarHome({
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint">
+            <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint font-semibold">
               live leak index
             </p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-snow">
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white">
               Every zombie, scored and priced
             </h2>
           </div>
           <button
             onClick={() => open("watchlist")}
-            className="rounded-lg border border-gold/50 bg-gold/10 px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-gold transition hover:bg-gold/20"
+            className="rounded-xl border border-gold/50 bg-gold/10 px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-gold transition hover:bg-gold/20 shadow-sm"
           >
             ⚡ Arm a tripwire
           </button>
@@ -151,50 +151,50 @@ export default function RadarHome({
       </section>
 
       {/* Pricing comparison */}
-      <section id="pricing" className="border-t border-edge bg-panel/30">
+      <section id="pricing" className="border-t border-white/10 bg-white/[0.01]">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="max-w-2xl">
-            <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint">
+            <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint font-semibold">
               pricing
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-snow sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Cheaper than one idle NAT gateway
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-fog">
+            <p className="mt-4 text-sm leading-relaxed text-zinc-300">
               The reference fleet above leaks nearly $9k every month. Club Pro
               costs less than 0.1% of that. India pays in rupees over Razorpay;
               everyone else in dollars over Stripe.
             </p>
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-xl border border-edge">
-            <div className="grid grid-cols-[1.2fr_1fr_1.4fr] border-b border-edge bg-ink/60 font-mono text-[10px] uppercase tracking-[0.25em] text-fog">
-              <div className="px-4 py-3">capability</div>
-              <div className="px-4 py-3">free radar</div>
-              <div className="px-4 py-3 text-mint">club pro</div>
+          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-[#090d16]/90 backdrop-blur-xl shadow-2xl">
+            <div className="grid grid-cols-[1.2fr_1fr_1.4fr] border-b border-white/10 bg-white/[0.03] font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-400">
+              <div className="px-4 py-3.5">capability</div>
+              <div className="px-4 py-3.5">free radar</div>
+              <div className="px-4 py-3.5 text-mint font-bold">club pro</div>
             </div>
             {COMPARISON.map((row) => (
               <div
                 key={row.feature}
-                className="grid grid-cols-[1.2fr_1fr_1.4fr] border-b border-edge text-sm last:border-b-0"
+                className="grid grid-cols-[1.2fr_1fr_1.4fr] border-b border-white/10 text-sm last:border-b-0"
               >
-                <div className="px-4 py-3 font-medium text-snow">
+                <div className="px-4 py-3.5 font-medium text-white">
                   {row.feature}
                 </div>
-                <div className="px-4 py-3 text-fog">{row.free}</div>
-                <div className="px-4 py-3 text-mist">{row.pro}</div>
+                <div className="px-4 py-3.5 text-zinc-400">{row.free}</div>
+                <div className="px-4 py-3.5 text-zinc-200">{row.pro}</div>
               </div>
             ))}
-            <div className="grid grid-cols-[1.2fr_1fr_1.4fr] bg-ink/60">
-              <div className="px-4 py-4 font-mono text-[10px] uppercase tracking-widest text-fog">
+            <div className="grid grid-cols-[1.2fr_1fr_1.4fr] bg-white/[0.02]">
+              <div className="px-4 py-4 font-mono text-[10px] uppercase tracking-widest text-zinc-400">
                 price
               </div>
               <div className="px-4 py-4">
-                <span className="font-mono text-lg font-bold text-snow">$0</span>
+                <span className="font-mono text-lg font-bold text-white">$0</span>
               </div>
               <div className="flex items-center gap-3 px-4 py-4">
-                <span className="font-mono text-lg font-bold text-snow">₹499</span>
-                <span className="font-mono text-sm text-fog">/ $9 per month</span>
+                <span className="font-mono text-lg font-bold text-white">₹499</span>
+                <span className="font-mono text-sm text-zinc-400">/ $9 per month</span>
               </div>
             </div>
           </div>
@@ -202,13 +202,13 @@ export default function RadarHome({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               onClick={() => open("pricing")}
-              className="rounded-lg bg-mint px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-widest text-ink transition hover:bg-lime"
+              className="rounded-xl bg-mint px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-widest text-[#07090e] transition hover:bg-lime shadow-lg shadow-mint/10"
             >
               Open Club Pro checkout
             </button>
             <a
               href="/login"
-              className="rounded-lg border border-edge px-6 py-3 font-mono text-[11px] font-semibold uppercase tracking-widest text-mist transition hover:border-edge2 hover:text-snow"
+              className="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-mono text-[11px] font-semibold uppercase tracking-widest text-zinc-300 transition hover:bg-white/10 hover:border-white/30 hover:text-white"
             >
               Start on the free radar →
             </a>
@@ -218,19 +218,19 @@ export default function RadarHome({
 
       <RevenueModel />
 
-      <section className="border-t border-edge">
+      <section className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-4 py-14 sm:px-6">
           <div>
-            <h2 className="text-2xl font-bold text-snow">
+            <h2 className="text-2xl font-extrabold text-white">
               Get the Monday waste letter
             </h2>
-            <p className="mt-2 text-sm text-fog">
+            <p className="mt-2 text-sm text-zinc-400">
               New signatures, one Terraform fix, zero spam.
             </p>
           </div>
           <button
             onClick={() => open("newsletter")}
-            className="rounded-lg border border-mint/50 bg-mint/10 px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-widest text-mint transition hover:bg-mint/20"
+            className="rounded-xl border border-mint/50 bg-mint/10 px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-widest text-mint transition hover:bg-mint/20"
           >
             ✉ Subscribe free
           </button>

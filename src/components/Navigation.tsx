@@ -51,42 +51,42 @@ export default function Navigation() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-edge bg-ink/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07090e]/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5">
           <span className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-mint/40 bg-mint/10">
             <Radar className="h-5 w-5 text-mint" />
             <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-ember pulse-dot" />
           </span>
-          <span className="text-lg font-bold tracking-tight text-snow">
+          <span className="text-lg font-bold tracking-tight text-white">
             CloudTrim<span className="text-mint">AI</span>
           </span>
-          <span className="hidden rounded border border-edge px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-widest text-fog lg:inline">
+          <span className="hidden rounded-full border border-white/10 px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-zinc-400 lg:inline">
             v2.6
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 font-mono text-[11px] uppercase tracking-[0.18em] text-fog md:flex">
-          <Link href="/" className="transition hover:text-mint">
+        <nav className="hidden items-center gap-6 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400 md:flex">
+          <Link href="/" className="transition hover:text-white">
             Radar
           </Link>
-          <Link href="/#bento-architecture" className="text-mint font-semibold transition hover:text-snow">
+          <Link href="/#bento-architecture" className="text-mint font-bold transition hover:text-white">
             ✨ Bento Grid
           </Link>
-          <Link href="/#pricing" className="transition hover:text-mint">
+          <Link href="/#pricing" className="transition hover:text-white">
             Pricing
           </Link>
-          <Link href="/#revenue" className="transition hover:text-mint">
+          <Link href="/#revenue" className="transition hover:text-white">
             Revenue
           </Link>
-          <Link href="/watchlists" className="transition hover:text-mint">
+          <Link href="/watchlists" className="transition hover:text-white">
             Tripwires
           </Link>
         </nav>
 
         <div className="flex items-center gap-3">
           <div
-            className="hidden items-center gap-2 rounded-md border border-edge bg-panel px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-widest sm:flex"
+            className="hidden items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-widest sm:flex"
             title="Live system status"
           >
             <span

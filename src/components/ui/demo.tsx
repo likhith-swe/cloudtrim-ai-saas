@@ -1,21 +1,12 @@
-"use client";
+import { Component } from "@/components/ui/sign-in-card-2";
 
-import EtherealBeamsHero from "@/components/ui/ethereal-beams-hero";
-
-const settings = {
-  beamWidth: 2.5,
-  beamHeight: 18,
-  speed: 2.5,
-  noiseIntensity: 2,
-  lightColor: "#ffffff",
-  rotation: 43,
-};
-
-export default function Demo(props: Partial<typeof settings>) {
-  const s = { ...settings, ...props };
+const DemoOne = () => {
   return (
-    <div className="h-screen w-screen">
-      <EtherealBeamsHero {...s} />
+    <div className="flex w-full h-screen justify-center items-center">
+      <Component />
     </div>
   );
-}
+};
+
+export { DemoOne };
+export default DemoOne;

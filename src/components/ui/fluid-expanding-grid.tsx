@@ -139,7 +139,7 @@ export function FluidExpandingGrid({
                 >
                   <motion.div
                     layoutId={`${id}-${item.id}-mask-wrapper`}
-                    className="absolute inset-0 overflow-hidden bg-zinc-100 dark:bg-zinc-900"
+                    className="absolute inset-0 overflow-hidden bg-zinc-950 border border-white/20 shadow-2xl group-hover:border-white/40 transition-colors"
                     style={{ borderRadius: 32 }}
                   >
                     <img

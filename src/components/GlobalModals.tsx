@@ -100,12 +100,12 @@ export function ModalShell({
       <button
         aria-label="Close modal"
         onClick={onClose}
-        className="absolute inset-0 cursor-default bg-ink/85 backdrop-blur-sm"
+        className="absolute inset-0 cursor-default bg-black/80 backdrop-blur-md"
       />
       <div
-        className={`modal-in relative max-h-[88vh] w-full ${
+        className={`modal-in relative max-h-[90vh] w-full ${
           wide ? "max-w-3xl" : "max-w-md"
-        } overflow-y-auto rounded-xl border border-edge2 bg-panel shadow-[0_24px_90px_rgba(0,0,0,0.65)]`}
+        } overflow-y-auto rounded-2xl border border-white/15 bg-[#090d16] shadow-[0_32px_100px_rgba(0,0,0,0.85)] backdrop-blur-2xl`}
       >
         {children}
       </div>
@@ -123,17 +123,17 @@ export function ModalHeader({
   onClose: () => void;
 }) {
   return (
-    <div className="flex items-start justify-between border-b border-edge px-6 py-4">
+    <div className="flex items-start justify-between border-b border-white/10 px-6 py-5">
       <div>
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-mint">
+        <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-semibold">
           {eyebrow}
         </p>
-        <h3 className="mt-1 text-lg font-semibold text-snow">{title}</h3>
+        <h3 className="mt-1 text-lg font-bold text-white">{title}</h3>
       </div>
       <button
         onClick={onClose}
         aria-label="Close"
-        className="rounded-md border border-edge px-2.5 py-1 font-mono text-xs text-fog transition hover:border-edge2 hover:text-snow"
+        className="rounded-xl border border-white/10 px-2.5 py-1 text-xs text-zinc-400 transition hover:border-white/20 hover:text-white"
       >
         ESC ✕
       </button>

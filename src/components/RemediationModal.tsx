@@ -130,7 +130,7 @@ export default function RemediationModal({
 
         <p className="mt-3 text-sm text-fog">{leak.detectionReason}</p>
 
-        <div className="mt-5 flex gap-1 rounded-lg border border-edge bg-ink p-1">
+        <div className="mt-5 flex gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1">
           {(
             [
               { key: "terraform", label: "Terraform" },
@@ -140,10 +140,10 @@ export default function RemediationModal({
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`flex-1 rounded-md py-1.5 font-mono text-[11px] font-semibold uppercase tracking-widest transition ${
+              className={`flex-1 rounded-lg py-2 font-mono text-[11px] font-bold uppercase tracking-wider transition ${
                 tab === t.key
-                  ? "bg-mint/15 text-mint"
-                  : "text-fog hover:text-mist"
+                  ? "bg-white text-zinc-950 shadow-sm"
+                  : "text-zinc-400 hover:text-white"
               }`}
             >
               {t.label}
@@ -159,19 +159,19 @@ export default function RemediationModal({
           )}
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-edge pt-4">
-          <p className="font-mono text-[10px] uppercase tracking-widest text-fog">
-            reclaims ≈{" "}
-            <span className="text-lime">
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-400">
+            Reclaims ≈{" "}
+            <span className="text-emerald-400 font-bold">
               {usdRound(leak.monthlyWasteUsd)}/mo
             </span>{" "}
             · {usdRound(leak.monthlyWasteUsd * 12)}/yr
           </p>
           <Link
             href={`/leak/${leak.id}`}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-mint/50 bg-mint/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-widest text-mint transition hover:bg-mint/20"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-xs font-bold text-zinc-950 transition hover:bg-zinc-200 shadow-sm"
           >
-            Full audit <ExternalLink className="h-3 w-3" />
+            Full Audit Report <ExternalLink className="h-3 w-3" />
           </Link>
         </div>
       </div>

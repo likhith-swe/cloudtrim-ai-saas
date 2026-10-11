@@ -150,68 +150,129 @@ export default function RadarHome({
         <LeakGrid leaks={filtered} />
       </section>
 
-      {/* Pricing comparison */}
+      {/* Pricing Section */}
       <section id="pricing" className="border-t border-white/10 bg-white/[0.01]">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <div className="max-w-2xl">
-            <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-mint font-semibold">
-              pricing
+        <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-zinc-400">
+              Clear &amp; Predictable Pricing
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              Cheaper than one idle NAT gateway
+              Cheaper than a single idle NAT gateway
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-zinc-300">
-              The reference fleet above leaks nearly $9k every month. Club Pro
-              costs less than 0.1% of that. India pays in rupees over Razorpay;
-              everyone else in dollars over Stripe.
+            <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+              The reference fleet leaks over $8,700 every month. CloudTrim Club Pro pays for itself in less than 48 hours.
             </p>
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-[#090d16]/90 backdrop-blur-xl shadow-2xl">
-            <div className="grid grid-cols-[1.2fr_1fr_1.4fr] border-b border-white/10 bg-white/[0.03] font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-400">
-              <div className="px-4 py-3.5">capability</div>
-              <div className="px-4 py-3.5">free radar</div>
-              <div className="px-4 py-3.5 text-mint font-bold">club pro</div>
+          {/* Dual-Card Pricing Showcase */}
+          <div className="mt-12 grid gap-6 lg:grid-cols-2 max-w-4xl mx-auto items-stretch">
+            {/* Free Tier */}
+            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0d1017]/80 p-8 backdrop-blur-xl">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  Community Radar
+                </p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold text-white">$0</span>
+                  <span className="text-sm font-medium text-zinc-400">/ forever</span>
+                </div>
+                <p className="mt-2 text-xs leading-relaxed text-zinc-400">
+                  Essential visibility into top cloud waste signatures with zero credit card required.
+                </p>
+
+                <ul className="mt-6 space-y-3 border-t border-white/10 pt-6 text-xs text-zinc-300">
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> Top-10 verified cloud leak signatures
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> 1 automated email tripwire
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> Copy-paste AWS/GCP/Azure CLI remediations
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> Hourly telemetry scan cadence
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-4">
+                <a
+                  href="/login"
+                  className="flex w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 py-3 text-xs font-semibold text-white transition hover:bg-white/10 hover:border-white/30"
+                >
+                  Start on Free Radar →
+                </a>
+              </div>
+            </div>
+
+            {/* Club Pro Tier */}
+            <div className="relative flex flex-col justify-between rounded-2xl border border-white/20 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-xl shadow-2xl">
+              <span className="absolute -top-3 right-6 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 shadow-sm">
+                Recommended
+              </span>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                  Autonomous Protection
+                </p>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="text-4xl font-extrabold text-white">₹499</span>
+                  <span className="text-2xl font-bold text-zinc-400">/ $9</span>
+                  <span className="text-sm font-medium text-zinc-400">/ month</span>
+                </div>
+                <p className="mt-2 text-xs leading-relaxed text-zinc-400">
+                  Autonomous FinOps detection, real-time Slack/Telegram alerts, and 1-click Terraform fixes.
+                </p>
+
+                <ul className="mt-6 space-y-3 border-t border-white/10 pt-6 text-xs text-zinc-200">
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> All 30+ verified leak signatures &amp; custom radars
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> Unlimited tripwires (Slack, Telegram, WhatsApp, Email)
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> 1-click Terraform &amp; OpenTofu remediation modules
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> 5-minute telemetry scan freshness
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-400 font-bold">✓</span> 90-day WasteScore burn-down &amp; audit trail
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-4">
+                <button
+                  onClick={() => open("pricing")}
+                  className="flex w-full items-center justify-center rounded-xl bg-white py-3 text-xs font-bold text-zinc-950 transition hover:bg-zinc-200 shadow-lg shadow-white/5"
+                >
+                  Upgrade to Club Pro →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Capability Matrix */}
+          <div className="mt-14 max-w-4xl mx-auto overflow-hidden rounded-2xl border border-white/10 bg-[#0d1017]/80 backdrop-blur-xl">
+            <div className="grid grid-cols-[1.2fr_1fr_1.2fr] border-b border-white/10 bg-white/[0.03] px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-zinc-400">
+              <div>Capability</div>
+              <div>Free Community</div>
+              <div className="text-white">Club Pro</div>
             </div>
             {COMPARISON.map((row) => (
               <div
                 key={row.feature}
-                className="grid grid-cols-[1.2fr_1fr_1.4fr] border-b border-white/10 text-sm last:border-b-0"
+                className="grid grid-cols-[1.2fr_1fr_1.2fr] border-b border-white/10 px-6 py-3.5 text-xs last:border-b-0"
               >
-                <div className="px-4 py-3.5 font-medium text-white">
-                  {row.feature}
-                </div>
-                <div className="px-4 py-3.5 text-zinc-400">{row.free}</div>
-                <div className="px-4 py-3.5 text-zinc-200">{row.pro}</div>
+                <div className="font-medium text-white">{row.feature}</div>
+                <div className="text-zinc-400">{row.free}</div>
+                <div className="text-zinc-200 font-medium">{row.pro}</div>
               </div>
             ))}
-            <div className="grid grid-cols-[1.2fr_1fr_1.4fr] bg-white/[0.02]">
-              <div className="px-4 py-4 font-mono text-[10px] uppercase tracking-widest text-zinc-400">
-                price
-              </div>
-              <div className="px-4 py-4">
-                <span className="font-mono text-lg font-bold text-white">$0</span>
-              </div>
-              <div className="flex items-center gap-3 px-4 py-4">
-                <span className="font-mono text-lg font-bold text-white">₹499</span>
-                <span className="font-mono text-sm text-zinc-400">/ $9 per month</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <button
-              onClick={() => open("pricing")}
-              className="rounded-xl bg-mint px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-widest text-[#07090e] transition hover:bg-lime shadow-lg shadow-mint/10"
-            >
-              Open Club Pro checkout
-            </button>
-            <a
-              href="/login"
-              className="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-mono text-[11px] font-semibold uppercase tracking-widest text-zinc-300 transition hover:bg-white/10 hover:border-white/30 hover:text-white"
-            >
-              Start on the free radar →
-            </a>
           </div>
         </div>
       </section>

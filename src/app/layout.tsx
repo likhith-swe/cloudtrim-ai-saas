@@ -52,19 +52,23 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#060a08",
+  themeColor: "#08090d",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -76,12 +80,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="icon"
-          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23060a08'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%233ddc84' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%233ddc84' stroke-width='1' opacity='.5'/%3E%3Cpath d='M16 16 L27 16' stroke='%23b7ee4f' stroke-width='2'/%3E%3Ccircle cx='21' cy='10' r='2.2' fill='%23ff6b5e'/%3E%3C/svg%3E"
-        />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
       </head>
-      <body className="bg-ink font-display text-mist antialiased">
+      <body className="bg-[#08090d] font-sans text-white antialiased selection:bg-white/20 selection:text-white">
         <SmoothScroll />
         <GlobalModals>
           <Navigation />

@@ -1,6 +1,6 @@
 "use client";
 
-import { X } from "lucide-react";
+import { X, Sparkles } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useModals } from "./GlobalModals";
@@ -34,27 +34,29 @@ export default function OpenPricingCta() {
   };
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-40 w-[calc(100%-2rem)] max-w-2xl -translate-x-1/2">
-      <div className="flex items-center gap-3 rounded-xl border border-edge2 bg-panel/95 px-4 py-3 shadow-[0_16px_50px_rgba(0,0,0,0.55)] backdrop-blur">
-        <span className="hidden h-2 w-2 shrink-0 rounded-full bg-ember pulse-dot sm:block" />
-        <p className="flex-1 font-mono text-[11px] leading-snug text-mist">
-          Zombies are billing right now.{" "}
-          <span className="text-snow">Club Pro</span> watches 24/7 —{" "}
-          <span className="font-bold text-mint">₹499</span> /{" "}
-          <span className="font-bold text-mint">$9</span> per month.
+    <div className="fixed bottom-5 left-1/2 z-40 w-[calc(100%-2rem)] max-w-xl -translate-x-1/2">
+      <div className="flex items-center gap-3.5 rounded-2xl border border-white/10 bg-[#0d1017]/90 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.65)] backdrop-blur-2xl">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-emerald-400">
+          <Sparkles className="h-4 w-4" />
+        </div>
+        <p className="flex-1 text-xs leading-relaxed text-zinc-300">
+          Cloud waste compounds hourly.{" "}
+          <span className="font-semibold text-white">Club Pro</span> monitors 24/7 from{" "}
+          <span className="font-semibold text-white">₹499</span> /{" "}
+          <span className="font-semibold text-white">$9</span> per month.
         </p>
         <button
           onClick={() => open("pricing")}
-          className="shrink-0 rounded-lg bg-mint px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-widest text-ink transition hover:bg-lime"
+          className="shrink-0 rounded-xl bg-white px-3.5 py-1.5 text-xs font-bold text-zinc-950 transition hover:bg-zinc-200 shadow-sm"
         >
           Upgrade
         </button>
         <button
           onClick={dismiss}
           aria-label="Dismiss upgrade bar"
-          className="shrink-0 rounded-md border border-edge p-1.5 text-fog transition hover:text-snow"
+          className="shrink-0 rounded-lg p-1.5 text-zinc-400 transition hover:text-white hover:bg-white/5"
         >
-          <X className="h-3.5 w-3.5" />
+          <X className="h-4 w-4" />
         </button>
       </div>
     </div>

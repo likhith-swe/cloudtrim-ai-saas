@@ -18,7 +18,7 @@ const ITEMS: GalleryItem[] = [
     title: "AWS Compute Fleets",
     subtitle: "US-East-1 Idle EC2 & Abandoned EKS Nodes ($4,210/mo)",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
     color: "#3ddc84",
   },
   {
@@ -26,7 +26,7 @@ const ITEMS: GalleryItem[] = [
     title: "GCP Storage & Disk",
     subtitle: "Cold bucket retention & zombie persistent disks ($2,840/mo)",
     image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80",
     color: "#ff6b5e",
   },
   {
@@ -34,7 +34,7 @@ const ITEMS: GalleryItem[] = [
     title: "Azure Virtual Gateways",
     subtitle: "Unrouted NAT gateways & orphaned public IPs ($1,664/mo)",
     image:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
     color: "#7cc4ff",
   },
 ];

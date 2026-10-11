@@ -71,14 +71,14 @@ export default function NewsletterModal({ onClose }: { onClose: () => void }) {
               onChange={(e) => setEmail(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && submit()}
               placeholder="you@company.dev"
-              className="w-full rounded-lg border border-edge bg-ink px-3 py-2.5 font-mono text-sm text-snow placeholder:text-fog/60 focus:border-mint/60 focus:outline-none"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-white/30 focus:outline-none"
             />
             <button
               onClick={submit}
               disabled={state === "saving" || !email.includes("@")}
-              className="shrink-0 rounded-lg border border-mint/50 bg-mint/10 px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-mint transition hover:bg-mint/20 disabled:opacity-50"
+              className="shrink-0 rounded-xl bg-white px-5 py-2.5 text-xs font-bold text-zinc-950 transition hover:bg-zinc-200 disabled:opacity-50 shadow-sm"
             >
-              {state === "saving" ? "…" : "Join"}
+              {state === "saving" ? "…" : "Subscribe"}
             </button>
           </div>
         )}

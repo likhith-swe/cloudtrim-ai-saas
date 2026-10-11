@@ -123,7 +123,7 @@ export default function WatchlistModal({
                 <select
                   value={provider}
                   onChange={(e) => setProvider(e.target.value)}
-                  className="mt-1.5 w-full rounded-lg border border-edge bg-ink px-3 py-2 font-mono text-sm text-snow focus:border-mint/60 focus:outline-none"
+                  className="mt-1.5 w-full rounded-xl border border-white/10 bg-[#0c1017] px-3 py-2 text-sm text-white focus:border-white/30 focus:outline-none"
                 >
                   <option value="any">any</option>
                   <option value="aws">AWS</option>
@@ -132,13 +132,13 @@ export default function WatchlistModal({
                 </select>
               </div>
               <div>
-                <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-fog">
+                <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-400">
                   service
                 </label>
                 <select
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="mt-1.5 w-full rounded-lg border border-edge bg-ink px-3 py-2 font-mono text-sm text-snow focus:border-mint/60 focus:outline-none"
+                  className="mt-1.5 w-full rounded-xl border border-white/10 bg-[#0c1017] px-3 py-2 text-sm text-white focus:border-white/30 focus:outline-none"
                 >
                   <option value="any">any</option>
                   {allServices().map((s) => (
@@ -151,10 +151,10 @@ export default function WatchlistModal({
             </div>
             <div>
               <div className="flex justify-between">
-                <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-fog">
+                <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-400">
                   monthly waste threshold
                 </label>
-                <span className="font-mono text-xs font-bold text-ember">
+                <span className="font-mono text-xs font-bold text-amber-400">
                   ≥ ${threshold}/mo
                 </span>
               </div>
@@ -165,22 +165,22 @@ export default function WatchlistModal({
                 step={25}
                 value={threshold}
                 onChange={(e) => setThreshold(Number(e.target.value))}
-                className="mt-2 w-full"
+                className="mt-2 w-full accent-white cursor-pointer"
               />
             </div>
             <div>
-              <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-fog">
+              <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-400">
                 alert channel
               </label>
-              <div className="mt-1.5 grid grid-cols-4 gap-1 rounded-lg border border-edge bg-ink p-1">
+              <div className="mt-1.5 grid grid-cols-4 gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1">
                 {["slack", "telegram", "whatsapp", "email"].map((c) => (
                   <button
                     key={c}
                     onClick={() => setChannel(c)}
-                    className={`rounded-md py-1.5 font-mono text-[9px] font-semibold uppercase tracking-wider transition ${
+                    className={`rounded-lg py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider transition ${
                       channel === c
-                        ? "bg-mint/15 text-mint"
-                        : "text-fog hover:text-mist"
+                        ? "bg-white text-zinc-950 font-bold shadow-sm"
+                        : "text-zinc-400 hover:text-white"
                     }`}
                   >
                     {c}
@@ -190,7 +190,7 @@ export default function WatchlistModal({
             </div>
 
             {state === "error" ? (
-              <p className="font-mono text-xs text-ember">
+              <p className="font-mono text-xs text-red-400">
                 ✕ {errMsg} — try again
               </p>
             ) : null}
@@ -198,9 +198,9 @@ export default function WatchlistModal({
             <button
               onClick={submit}
               disabled={state === "saving" || !label.trim()}
-              className="w-full rounded-lg border border-mint/50 bg-mint/10 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-mint transition hover:bg-mint/20 disabled:opacity-50"
+              className="w-full rounded-xl bg-white py-3 text-xs font-bold text-zinc-950 transition hover:bg-zinc-200 disabled:opacity-50 shadow-sm"
             >
-              {state === "saving" ? "arming…" : "⚡ arm tripwire"}
+              {state === "saving" ? "Arming…" : "⚡ Arm Tripwire Alert"}
             </button>
             <p className="text-center font-mono text-[10px] text-fog">
               signed in as <span className="text-mist">{auth}</span>
